@@ -38,7 +38,7 @@ docker build . -t v2ray-nginx-wss-nezumi
 - `DOMAIN` 必选, 你拥有的解析到当前主机的域名, 唯一一个必须指定的变量
 - `ACCESS` 可选, 用于穿透`Nginx`访问`v2ray`的路径, 默认值: `v2ray`
 - `UID` 可选, 用于`vmess`加密和解密的密码, 必须符合`uuid`格式, 默认值: 随机生成
-- `URL` 可选, 伪装页的下载地址, 默认值: https://github.com/trending
+- `URL` 可选, 伪装页的下载地址, 默认值: https://github.com/trending, 如果设为特殊值`none`
 - `EMAIL` 可选, 申请证书需要使用的邮箱, 不会被验证, 默认值: example@gmail.com
 
 
@@ -94,6 +94,10 @@ docker run \
   --name v2ray-nginx-wss-nezumi-c \
   v2ray-nginx-wss-nezumi
 ```
+---
+
+对于打算使用自己的伪装页的用户, 应当将文件映射至容器内的`/usr/share/nginx/html`文件夹内, 且在启动容器时环境变量`URL`设为`none`, 否则启动容器时会对首页文件进行覆盖.
+
 ---
 
 如果在某些中间环节执行了误操作导致问题, 你都可以使用如下命令, 将一切推倒重来:
