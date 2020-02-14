@@ -68,7 +68,7 @@ if [[ $certed ]]; then
         sed -i -e "s/\$access/$access/g" -e "s/\$domain/$domain/g" /etc/nginx/nginx.conf
 
         # 获得伪装页, 并替换为默认首页index.html
-        [[ $url!="none" ]] && wget -q $url -O /usr/share/nginx/html/index.html 
+        [[ $url != "none" ]] && wget -q $url -O /usr/share/nginx/html/index.html 
 
         # 修改v2ray配置, 包括替换服务端配置, 并替换生成客户端推荐配置
         sed -i -e "s/\$uid/$uid/g" -e "s/\$access/$access/g" /etc/v2ray/config.json # 重写 id和path
