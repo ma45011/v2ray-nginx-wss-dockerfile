@@ -26,7 +26,7 @@ apt -y install docker wget && systemctl start docker && systemctl enable docker
 
 ```bash
 # 下载本项目的dockerfile
-wget https://raw.githubusercontent.com/KanagawaNezumi/v2ray-nginx-docker/master/dockerfile -O dockerfile
+wget https://raw.githubusercontent.com/KanagawaNezumi/v2ray-nginx-wss-dockerfile/master/dockerfile -O dockerfile
 
 # 构建镜像, 可能需要一段时间
 docker build . -t v2ray-nginx-wss-nezumi 
