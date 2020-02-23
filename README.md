@@ -1,9 +1,9 @@
 # v2ray-nginx-wss-dockfile
 
-Surfing to the sky ! 
+Surfing...
 
 
-通过本项目的`dockerfile`, 你可以使用`docker`快速搭建`v2ray+nginx+websocket+tls`的远程代理服务器, 要达成这一目标, 需要如下前置条件:
+通过本项目的`dockerfile`, 你可以使用`docker`快速搭建`v2ray+nginx+websocket+tls`服务, 要达成这一目标, 需要如下前置条件:
 
 1. 一台VPS, 可以运行`docker`
 2. 一个域名, 该域名必须解析到VPS的IP地址
@@ -31,7 +31,7 @@ Surfing to the sky !
 yum -y install docker wget && systemctl start docker && systemctl enable docker
 ```
 
-对于`Debian/Ubuntu`系统, 只需要将`yum`替换为`apt`即可
+对于`Debian/Ubuntu`系统, 执行如下命令:
 
 ```bash
 apt -y install docker wget && systemctl start docker && systemctl enable docker
@@ -55,7 +55,7 @@ docker pull docker.io/kanagawanezumi/v2ray-nginx-wss-nezumi
 # 重命名本地镜像, 以与后文的示例命令保持一致
 docker tag docker.io/kanagawanezumi/v2ray-nginx-wss-nezumi v2ray-nginx-wss-nezumi
 
-# 删除原拉取镜像以确保正常删除
+# 删除原镜像以确保所有镜像正常删除
 docker rmi docker.io/kanagawanezumi/v2ray-nginx-wss-nezumi
 ```
 
@@ -215,8 +215,4 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 
 值得一提的是, 在本项目的推荐配置中, 考虑到某些极端情况下的安全性, **并未**取消`vmess`层的加密.
 
----
 
-### 其他
-
-愿有一天, 你能安然享受阳光.
